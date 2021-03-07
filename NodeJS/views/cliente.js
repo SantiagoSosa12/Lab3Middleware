@@ -1,5 +1,6 @@
 function enviarPokemon() {
-    fetch('http://192.168.0.16:3000/registarPokemon', {
+    console.log('Enviando pokemon');
+    fetch('http://192.168.0.16:3000/registrarPokemon', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

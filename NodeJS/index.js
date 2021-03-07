@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/registarPokemon', (req, res) => {
+app.get('/registrarPokemon', (req, res) => {
   if (!req.body)
         return res.sendStatus(400)
 
