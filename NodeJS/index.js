@@ -10,10 +10,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/registarPokemon', (req, res) => {
-  console.log(request.body.user.nombrepokemon);
-  console.log(request.body.user.peso);
-  console.log(request.body.user.altura);
-  console.log(request.body.user.tipo);
+  if (!req.body)
+        return res.sendStatus(400)
+
+    var user = req.body.user;
+    var pass = req.body.pass;
+  console.log(request.body.nombrepokemon);
+  console.log(request.body.peso);
+  console.log(request.body.altura);
+  console.log(request.body.tipo);
   res.send('Registrado!!')
 })
 
