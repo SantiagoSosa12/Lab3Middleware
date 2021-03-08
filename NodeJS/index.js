@@ -4,7 +4,6 @@ const port = 3000
 
 app.use(express.urlencoded({ extended: true}));
 
-app.use(body_parser.json());
 app.use(express.static(__dirname + "/views"));
 
 app.get('/', (req, res) => {
