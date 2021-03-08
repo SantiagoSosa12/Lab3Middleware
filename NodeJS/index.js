@@ -41,7 +41,7 @@ app.post('/registrarPokemon', (req, res) => {
   res.send('Registrado!!');
 });
 
-app.post('/pokemons', (req, res) => {
+app.get('/pokemons', (req, res) => {
   var lista ="";
   pokemons.forEach(element => lista += element.nombrepokemon + ","
    + element.peso + "," + element.altura + "," + element.tipo + ";");
