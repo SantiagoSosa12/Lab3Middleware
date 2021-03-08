@@ -44,7 +44,7 @@ app.post('/registrarPokemon', (req, res) => {
 app.get('/pokemons', (req, res) => {
   var lista ='[';
   var i = 0;
-  while(i < pokemons.length()){
+  while(i < pokemons.length){
     var elemento = pokemons[i];
     lista += '{ "nombre": "' + elemento.nombrepokemon +'", "peso":'+elemento.peso
     +',"altura":'+elemento.altura+',"tipo":"'+elemento.tipo+'"}' 
