@@ -42,14 +42,21 @@ app.post('/registrarPokemon', (req, res) => {
 });
 
 app.get('/pokemons', (req, res) => {
-  var lista ="";
-  pokemons.forEach(element => lista += element.name + ","
-   + element.peso + "," + element.altura + "," + element.tipo + ";");
+  var lista ='';
+  var i = 0;
+  while(i < pokemons.length()){
+    var elemento = pokemons[i];
+    lista += '{ "nombre": "' + elemento.nombrepokemon +'", "peso":'+elemento.peso
+    +',"altura":'+elemento.altura+',"tipo":"'+elemento.tipo+'"}' 
+    if(pokemons[i + 1] != null){
+      lista + ","
+    }
+    i++;
+  }
   res.send(lista);
 });
 
 app.listen(port, () => {
-
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
