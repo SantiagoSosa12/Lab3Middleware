@@ -1,25 +1,10 @@
-function enviarPokemon() {
-    console.log('Enviando pokemon');
-    fetch('http://192.168.0.16:3000/registrarPokemon', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            user: {
-                nombrepokemon: document.getElementById('nombrepokemon'),
-                peso: document.getElementById('peso'),
-                altura: document.getElementById('altura'),
-                tipo: document.getElementById('tipo')
-            }
-        })
-    }).then(response => response.text())
+function myFunction() {
+    fetch('http://192.168.0.16:3000/pokemons')
+    .then(response => response.text())
     .then((response) => {
         console.log(response)
-        document.getElementById("Texto").innerHTML = response;
+        document.getElementById("demo").innerHTML = response;
     })
     .catch(err => console.log(err));
+  
 }
-
-
-
