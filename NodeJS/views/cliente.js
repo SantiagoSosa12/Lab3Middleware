@@ -13,9 +13,10 @@ function showTable(data){
     var contenido = document.querySelector('#contenido');
     let generalList = data.split(";");
     generalList.forEach(function(elemento) {
-        console.log(elemento);
-        let particularData = elemento.split(",");
-        contenido.innerHTML += `
+        if(elemento != ""){
+            console.log(elemento);
+            let particularData = elemento.split(",");
+            contenido.innerHTML += `
             <tr>
                 <td>${particularData[0]}</td>
                 <td>${particularData[1]}</td>
@@ -23,6 +24,6 @@ function showTable(data){
                 <td>${particularData[3]}</td>
             </tr>
         `
-        
+        }
     })
 }
