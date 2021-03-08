@@ -10,11 +10,19 @@ function myFunction() {
 }
 
 function showTable(data){
+    var contenido = document.querySelector('#contenido');
     let generalList = data.split(";");
     generalList.forEach(function(elemento) {
-        let particularList = elemento.split(",");
-        particularList.forEach(function(elemento1) {
-            console.log(elemento1);
-        })
+        console.log(elemento);
+        let particularData = elemento.split(",");
+        contenido.innerHTML += `
+            <tr>
+                <td>${particularData[0]}</td>
+                <td>${particularData[1]}</td>
+                <td>${particularData[2]}</td>
+                <td>${particularData[3]}</td>
+            </tr>
+        `
+        
     })
 }
