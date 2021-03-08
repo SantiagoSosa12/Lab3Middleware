@@ -46,7 +46,7 @@ app.get('/pokemons', (req, res) => {
   var i = 0;
   while(i < pokemons.length){
     var elemento = pokemons[i];
-    lista += '{ "nombre": "' + elemento.nombrepokemon +'", "peso":'+elemento.peso
+    lista += '{ "nombre": "' + elemento.name +'", "peso":'+elemento.peso
     +',"altura":'+elemento.altura+',"tipo":"'+elemento.tipo+'"}' 
     if(pokemons[i + 1] != null){
       lista + ","
