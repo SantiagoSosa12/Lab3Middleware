@@ -13,10 +13,10 @@ app.get('/', (req, res) => {
 app.post('/registrarPokemon', (req, res) => {
   var user = req.body.user;
   var pass = req.body.pass;
-  console.log(request.body.nombrepokemon);
-  console.log(request.body.peso);
-  console.log(request.body.altura);
-  console.log(request.body.tipo);
+  console.log(req.body.nombrepokemon);
+  console.log(req.body.peso);
+  console.log(req.body.altura);
+  console.log(req.body.tipo);
   res.send('Registrado!!')
 });
 
