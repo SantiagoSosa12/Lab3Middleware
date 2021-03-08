@@ -34,10 +34,6 @@ app.post('/registrarPokemon', (req, res) => {
     tipo: req.body.tipo
   };
   pokemons.push(myPokemon);
-  console.log(req.body.nombrepokemon);
-  console.log(req.body.peso);
-  console.log(req.body.altura);
-  console.log(req.body.tipo);
   res.send('Registrado!!');
 });
 
@@ -45,7 +41,6 @@ app.get('/pokemons', (req, res) => {
   var lista ='[';
   var i = 0;
   while(i < pokemons.length){
-    console.log("recorro array, adelante esta: " + pokemons[i + 1]);
     var elemento = pokemons[i];
     lista += '{ "nombre": "' + elemento.name +'", "peso":'+elemento.peso
     +',"altura":'+elemento.altura+',"tipo":"'+elemento.tipo+'"}' 

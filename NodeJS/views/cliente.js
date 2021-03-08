@@ -1,9 +1,10 @@
+const { response } = require("express");
+
 function myFunction() {
     fetch('http://192.168.0.16:3000/pokemons')
-    .then(response => response.text())
-    .then((response) => {
-        console.log(response);
-        showTable(response);
+    .then( response => response.json())
+    .then(data => {
+        console.log(data);
     })
     .catch(err => console.log(err));
   
