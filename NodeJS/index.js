@@ -45,11 +45,12 @@ app.get('/pokemons', (req, res) => {
   var lista ='[';
   var i = 0;
   while(i < pokemons.length){
+    console.log("recorro array, adelante esta: " + pokemons[i + 1]);
     var elemento = pokemons[i];
     lista += '{ "nombre": "' + elemento.name +'", "peso":'+elemento.peso
     +',"altura":'+elemento.altura+',"tipo":"'+elemento.tipo+'"}' 
     if(pokemons[i + 1] != null){
-      lista + ","
+      lista += ',';
     }
     i++;
   }
