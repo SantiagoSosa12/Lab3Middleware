@@ -42,7 +42,7 @@ app.post('/registrarPokemon', (req, res) => {
 });
 
 app.get('/pokemons', (req, res) => {
-  var lista ='';
+  var lista ='[';
   var i = 0;
   while(i < pokemons.length()){
     var elemento = pokemons[i];
@@ -53,6 +53,7 @@ app.get('/pokemons', (req, res) => {
     }
     i++;
   }
+  lista += ']';
   res.send(lista);
 });
 
