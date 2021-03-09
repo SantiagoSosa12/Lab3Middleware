@@ -37,7 +37,7 @@ app.post('/registrarPokemon', (req, res) => {
 
 
 function toDatabase(req){
-  mongoose.connect('mongodb://192.168.0.18:27017/mibasededatos' , (err, connection)=>{
+  mongoose.connect('mongodb://192.168.0.18:27017/mibasededatos' , { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }, (err, connection)=>{
     let newPokemon = new pokemon({
       "name": req.body.nombrepokemon,
       "peso": req.body.peso,
