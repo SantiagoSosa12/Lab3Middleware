@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+require('./database/mongo');
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static(__dirname + "/views"));
