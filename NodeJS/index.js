@@ -4,7 +4,7 @@ const port = 3000
 //require('./database/mongo');
 const mongoose = require('mongoose');
 
-var schema = mongoose.schema({
+var schema = mongoose.Schema({
   "name": {type:String},
   "peso": {type:Number},
   "altura": {type:Number},
