@@ -11,7 +11,7 @@ var schema = mongoose.Schema({
   "tipo": {type:String}
 });
 
-var pokemon = mongoose.model('pokemon',schema);
+var pokemon = mongoose.model('pokemons',schema);
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static(__dirname + "/views"));
