@@ -4,6 +4,7 @@ const port = 3000
 //require('./database/mongo');
 const mongoose = require('mongoose');
 
+var ipConBD = '192.168.0.18';
 var schema = mongoose.Schema({
   "name": {type:String},
   "peso": {type:Number},
@@ -34,10 +35,13 @@ app.post('/registrarPokemon', (req, res) => {
   res.send('Registrado!!');
 });
 
-
+app.post('/changeServer', (req, res) => {
+  ipConBD = req.body.ip;
+  res.send('Se cambio la base de datos');
+});
 
 function toDatabase(req){
-  mongoose.connect('mongodb://192.168.0.18:27017/mibasededatos' , { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }, (err, connection)=>{
+  mongoose.connect('mongodb://'+ ipConBD+ ':27017/mibasededatos' , { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }, (err, connection)=>{
     let newPokemon = new pokemon({
       "name": req.body.nombrepokemon,
       "peso": req.body.peso,
