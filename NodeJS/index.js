@@ -4,7 +4,7 @@ const port = 3000
 //require('./database/mongo');
 const mongoose = require('mongoose');
 
-var ipConBD = '192.168.0.18';
+var ipConBD = '192.168.0.16';
 var schema = mongoose.Schema({
   "name": {type:String},
   "peso": {type:Number},
